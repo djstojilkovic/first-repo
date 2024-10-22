@@ -1,0 +1,8 @@
+p {
+  color: blue;
+  border: 1px solid black;
+}
+
+p > a > span {
+  color: green;
+}

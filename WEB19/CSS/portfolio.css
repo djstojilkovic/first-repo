@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f5ecd5;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+img {
+  width: 10%;
+  height: 100px;
+  object-position: 0%;
+}
+.header-div {
+  padding: 3%;
+  margin-left: 30%;
+  margin-right: 30%;
+  text-align: center;
+  height: auto;
+}
+.header-title {
+  padding-top: 20px;
+}
+p.p-header {
+  text-align: center;
+  padding-left: 109px;
+  padding-top: 5px;
+}
+
+hr {
+  margin-left: 30%;
+  margin-right: 30%;
+}
+.about-div {
+  margin-left: 30%;
+  margin-right: 50%;
+  padding-top: 4%;
+  /* border-right: solid 1px; */
+}
+.contact-div {
+  position: relative;
+  left: 500px;
+  bottom: 260px;
+}
+.contact-heading {
+  position: relative;
+  bottom: 15px;
+}
+.btn {
+  border-radius: 12px;
+  width: 100px;
+  height: 30px;
+}
+.projects-heading {
+  position: relative;
+  bottom: 150px;
+}
+.projects-p {
+  margin-left: 30%;
+  margin-right: 30%;
+  position: relative;
+  bottom: 100px;
+}
+.img-div {
+  margin-left: 30%;
+  margin-right: 30%;
+  width: 3000px;
+  position: relative;
+  right: 100px;
+  align-items: center;
+}
+.footer-div {
+  margin-left: 30%;
+  margin-right: 30%;
+  text-align: right;
+}
+.footer-img {
+  width: 400px;
+  position: relative;
+  right: 275px;
+  bottom: 62px;
+}
