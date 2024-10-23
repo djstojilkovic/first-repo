@@ -166,3 +166,23 @@
 //   return oddNum;
 // }
 // console.log(filterElements([1, 2, 3, 4, 5]));
+
+//7. zadatak 2. resenje
+var niz = [2, 8, 11, 4, 9, 3];
+function isOdd(x) {
+  return x % 2 !== 0;
+}
+
+function filterOdd(array, callback) {
+  var newArray = [];
+  for (var i = 0; i < array.length; i++) {
+    if (callback(array[i])) {
+      newArray.push(array[i]);
+    }
+  }
+
+  return newArray;
+}
+
+console.log(filterOdd(niz, isOdd));
+console.log(niz.filter(isOdd));
