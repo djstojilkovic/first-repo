@@ -166,15 +166,3 @@
 //   return oddNum;
 // }
 // console.log(filterElements([1, 2, 3, 4, 5]));
-
-function filterElements(array) {
-  var oddNum = [];
-  for (var i = 0; i < array.length; i++) {
-    if (oddCallback(array[i])) {
-      oddNum.push(array[i]);
-    }
-  }
-  return oddNum;
-}
-console.log(filterElements([1, 2, 3, 4, 5]));
-console.log(123);
