@@ -177,3 +177,4 @@ function filterElements(array) {
   return oddNum;
 }
 console.log(filterElements([1, 2, 3, 4, 5]));
+console.log(123);
