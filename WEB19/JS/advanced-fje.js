@@ -228,3 +228,67 @@
 // function calculate(a, b) {
 //   return a * b;
 // }
+
+//1.zadatak (practicals)
+// function checkString(str) {
+//   for (var i = 0; i < str.length; i++) {
+//     if (str[i] == "5") {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+// console.log(checkString("dsadasd"));
+
+//2.zadatak-glup nacin (practicals)
+// function replaceAppearances(str) {
+//   return (str = str.replace("JS", "**"));
+// }
+// console.log(replaceAppearances("dsadsaJSdsad"));
+
+//3.zadatak (practicals)
+// function insertString(str, pos, char) {
+//   if (str.length < 1 || pos > str.length) {
+//     return false;
+//   }
+//   return str.slice(0, pos - 1) + char + str.slice(pos - 1);
+// }
+// console.log(insertString("Goo morning", 4, "d"));
+
+//4.zadatak (practicals)
+// function deleteString(str, pos) {
+//   if (str.length < 1 || pos > str.length || pos === 0) {
+//     return "Invalid position";
+//   }
+
+//   return str.slice(0, pos - 1) + str.slice(pos);
+// }
+// console.log(deleteString("Goodd morning", 4));
+
+//5.zadatak (practicals)
+// function deleteSecondElement(array) {
+//   var result = [];
+//   for (var i = 0; i < array.length; i++) {
+//     if (i % 2 == 0) {
+//       result.push(array[i]);
+//     }
+//   }
+//   return result;
+// }
+// console.log(deleteSecondElement([13, 54, 55, 57, 59, 56, 101, 103, 102, 106]));
+
+//6.zadatak (practicals)
+// function deleteSecondElement(array, pos1, pos2) {
+//   var result = [];
+//   for (var i = 0; i < array.length; i++) {
+//     if (i >= pos1 && i <= pos2) {
+//       result.push(array[i] * 2);
+//     } else {
+//       result.push(array[i]);
+//     }
+//   }
+//   return result;
+// }
+// console.log(deleteSecondElement([3, 5, 1, 8, 90, -4, 23, 1, 67], 2, 6));
+
+//7.zadatak (practicals)
