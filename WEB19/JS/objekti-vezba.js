@@ -111,32 +111,69 @@ recipe.changeCuisine("French");
 console.log(recipe.cuisine);
 recipe.deleteIngredient(1);
 
-//1.zadatak sa Slack-a
+//1.zadatak (Objects.docx)
 
-var proizvod = [
-  {
-    naziv: "Plazma",
-    cena: 150,
-    opis: "Plazma je keks",
-    kolicina: 50,
-  },
-  {
-    naziv: "Hleb",
-    cena: 60,
-    opis: "Hleb od belog brasna",
-    kolicina: 20,
-  },
-  {
-    naziv: "Mleko",
-    cena: 130,
-    opis: "Mleko sa 20% mm",
-    kolicina: 65,
-  },
+function getTotalPrice(proizvodi) {
+  var result = 0;
+  for (var i = 0; i < proizvodi.length; i++) {
+    result += proizvodi[i]["kolicina"] * proizvodi[i]["cena"];
+  }
+  return result;
+}
+
+console.log(
+  "Ukupna cena je: " +
+    getTotalPrice([
+      { proizvod: "Mleko", kolicina: 1, cena: 150 },
+      { proizvod: "Jaja", kolicina: 10, cena: 11 },
+      { proizvod: "Hleb", kolicina: 3, cena: 60 },
+      { proizvod: "Jogurt", kolicina: 1, cena: 120 },
+    ]) +
+    "RSD"
+);
+
+console.log(
+  "Ukupna cena je: " +
+    getTotalPrice([{ proizvod: "Mleko", kolicina: 10, cena: 150 }]) +
+    "RSD"
+);
+
+//2.zadatak
+
+var jewelry = [
+  { name: "Diamond Earrings", price: 980 },
+  { name: "Gold watch", price: 250 },
+  { name: "Diamond necklace", price: 2500 },
 ];
 
-var korisnik = {
-  ime: "Djordje",
-  prezime: "Stojilkovic",
-  adresa: "Vlajkova 191",
-  korpa: [],
-};
+function mostExpensive() {
+  var max = -Infinity;
+  var name;
+  for (var i = 0; i < jewelry.length; i++) {
+    if (jewelry[i].price > max) {
+      max = jewelry[i].price;
+      name = jewelry[i].name;
+    }
+  }
+  return name;
+}
+
+console.log("The most expensive one is " + mostExpensive());
+
+//3.zadatak
+function mapLetters(word) {
+  var letterMap = {};
+  for (var i = 0; i < word.length; i++) {
+    var letter = word[i];
+    if (!letterMap[letter]) {
+      letterMap[letter] = [];
+    }
+    letterMap[letter].push(i);
+  }
+  return letterMap;
+}
+console.log(mapLetters("dodo"));
+console.log(mapLetters("froggy"));
+console.log(mapLetters("djordje"));
+
+//4.zadatak
