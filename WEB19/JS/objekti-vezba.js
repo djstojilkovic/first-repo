@@ -140,25 +140,25 @@ console.log(
 
 //2.zadatak
 
-var jewelry = [
-  { name: "Diamond Earrings", price: 980 },
-  { name: "Gold watch", price: 250 },
-  { name: "Diamond necklace", price: 2500 },
-];
+// var jewelry = [
+//   { name: "Diamond Earrings", price: 980 },
+//   { name: "Gold watch", price: 250 },
+//   { name: "Diamond necklace", price: 2500 },
+// ];
 
-function mostExpensive() {
-  var max = -Infinity;
-  var name;
-  for (var i = 0; i < jewelry.length; i++) {
-    if (jewelry[i].price > max) {
-      max = jewelry[i].price;
-      name = jewelry[i].name;
-    }
-  }
-  return name;
-}
+// function mostExpensive() {
+//   var max = -Infinity;
+//   var name;
+//   for (var i = 0; i < jewelry.length; i++) {
+//     if (jewelry[i].price > max) {
+//       max = jewelry[i].price;
+//       name = jewelry[i].name;
+//     }
+//   }
+//   return name;
+// }
 
-console.log("The most expensive one is " + mostExpensive());
+// console.log("The most expensive one is " + mostExpensive());
 
 //3.zadatak
 function mapLetters(word) {
@@ -176,4 +176,78 @@ console.log(mapLetters("dodo"));
 console.log(mapLetters("froggy"));
 console.log(mapLetters("djordje"));
 
-//4.zadatak
+//Konstruktori
+
+//1. zadatak (exercises objects intro)
+function Coffee(name, strength, flavour, milk, sugar) {
+  this.name = name;
+  this.strength = strength;
+  this.flavour = flavour;
+  this.milk = milk;
+  this.sugar = sugar;
+  this.myFavCoffe = function () {
+    return `My favorite coffee is ${this.name}, it is ${this.strength}, it has ${this.flavour} flavour`;
+  };
+}
+
+var favCoffee = new Coffee("Macchiato", "strong", "caramel", true, false);
+console.log(favCoffee);
+console.log(favCoffee.myFavCoffe());
+
+//1.zadatak (objects.docx)
+function Groceries(product, quantity, price) {
+  this.product = product;
+  this.quantity = quantity;
+  this.price = price;
+  this.totalPrice = function () {
+    return this.quantity * this.price;
+  };
+}
+var product1 = new Groceries("Milk", 5, 150);
+var product2 = new Groceries("Jogurt", 2, 140);
+var product3 = new Groceries("Hleb", 10, 60);
+console.log(product1, product2, product3);
+console.log("Ukupna cena je: " + product3.totalPrice() + "RSD");
+
+//2.zadatak (objects.docx)
+function Jewel(name, price) {
+  this.name = name;
+  this.price = price;
+}
+var jewelry1 = new Jewel("Diamond Earrings", 980);
+var jewelry2 = new Jewel("Gold watch", 250);
+var jewelryArray = [jewelry1, jewelry2];
+
+function mostExpensive(jewelry) {
+  var max = -Infinity;
+  var name;
+  for (var i = 0; i < jewelry.length; i++) {
+    if (jewelry[i].price > max) {
+      max = jewelry[i].price;
+      name = jewelry[i].name;
+    }
+  }
+  return name;
+}
+console.log(mostExpensive(jewelryArray));
+
+//4.zadatak (objects.docx)
+function Fight(me, spouse) {
+  this.me = me;
+  this.spouse = spouse;
+  this.determineWhoCursedTheMost = function () {
+    if (this.me > this.spouse) {
+      return "ME";
+    } else if (this.spouse > this.me) {
+      return "SPOUSE";
+    } else return "DRAW";
+  };
+}
+var fight1 = new Fight(8, 8);
+var fight2 = new Fight(10, 5);
+var fight3 = new Fight(5, 10);
+
+console.log(fight1);
+console.log(fight1.determineWhoCursedTheMost());
+
+//7. zadatak
