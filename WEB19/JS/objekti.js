@@ -176,3 +176,55 @@ console.log(calculator.add());
 console.log(calculator.subtract());
 console.log(calculator.multiply());
 console.log(calculator.divide());
+
+//built in objects
+
+var obj = new Object();
+Object.defineProperty(obj, "x", { value: 1, writable: true, enumerable: true });
+console.log(obj);
+console.log(obj.hasOwnProperty("x")); //da li postoji odredjeni property
+console.log(Object.isExtensible(obj)); //da li moze obj da se prosiruje
+
+Object.preventExtensions(obj); //sprecava dodavanje u objekat
+console.log(Object.isExtensible(obj)); // printa false jer smo preventovali extensions
+obj.a = "adfa"; //pokusavamo da dodamo property a sa value "adfa"
+console.log(obj); //kada isprinta, vidimo da nije dodao nista jer smo preventovali extensions
+
+//built in nizovi
+var array = [1, 2, 3, 4, 5, 6, 7]; //2 nacina za pravljenje niza
+var array2 = new Array(1, 3, 2, 4);
+var array3 = new Array(5); //pravi prazan niz sa 5 elemenata
+
+array2.sort();
+console.log(array2);
+
+array.push(12); //dodaje na kraj
+console.log(array);
+array.pop(); //brise s kraja
+console.log(array);
+
+console.log(array.join(",")); //vraca string sa value od elemenata niza
+console.log(array.slice(1, 4)); //od indexa 1 do 4 vraca elemente
+
+var array4 = array.splice(1, 4, 15, 10, 20); //sve nakon indexa "4", dodajemo u niz umesto izbacenih elemenata
+console.log(array);
+console.log(array4);
+
+//stringovi
+var potatoString = "Potato";
+console.log(potatoString[1]);
+console.log(potatoString.charAt(1));
+console.log(potatoString.indexOf("a")); //vraca na kom indexu je "a"
+console.log(potatoString.indexOf("b")); //vraca -1 kad karakter ne postoji
+
+var subString = potatoString.substring(1, 4); //vraca ono sto je skinuto
+console.log(subString);
+console.log(potatoString.slice(1, 4)); //skida prvi i poslednji i vraca ono sto je iseceno
+potatoString = "Potato head dsadas";
+
+var splitString = potatoString.split(" ");
+console.log(splitString);
+
+var now = new Date("");
+console.log(now);
+console.log(now.getUTCHours());
