@@ -33,18 +33,26 @@ function Program(date) {
       "min" +
       "\t";
     this.movies.forEach((movie) => {
-      programData += "\n" + "\t" + movie.getData();
+      programData += "\n" + "\t" + "\t" + movie.getData();
     });
     return programData;
   };
 }
 
-function Festival(name, numOfMoviesAllPrograms) {
+function Festival(name) {
   this.name = name;
   this.arrayOfPrograms = [];
-  this.numOfMoviesAllPrograms = numOfMoviesAllPrograms;
+  this.totalMovies = 0;
   this.addProgram = function (program) {
     this.arrayOfPrograms.push(program);
+    this.totalMovies += program.movies.length;
+  };
+  this.getData = function () {
+    var festivalData = this.name + " has " + this.totalMovies + " movie titles";
+    this.arrayOfPrograms.forEach((program) => {
+      festivalData += "\n" + "\t" + program.getData();
+    });
+    return festivalData;
   };
 }
 //Adding properties to Genre
@@ -65,13 +73,18 @@ program1.addMovie(movie);
 program1.addMovie(movie2);
 program1.addMovie(movie3);
 program1.addMovie(movie4);
+
 program2.addMovie(movie);
 program2.addMovie(movie3);
 
+//Adding property to Festival and adding programs to Festival
+var festival = new Festival("Weekend festival");
+festival.addProgram(program1);
+festival.addProgram(program2);
+
 //Main execution IIFE function
 (function mainExecution(inputArray) {
-  //   console.log("Hi");
   inputArray.forEach((element) => {
     console.log(element.getData());
   });
-})([program1, program2]);
+})([festival]);
