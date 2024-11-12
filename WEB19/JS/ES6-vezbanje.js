@@ -122,3 +122,154 @@ const findMax = (arr) => {
   return Math.max(...arr);
 };
 console.log(findMax([1, 2, 3, 4, 5, 6, 7, 8]));
+
+//Anini zadaci
+const data = [
+  {
+    id: 1,
+    name: "Ana",
+    location: {
+      city: "Belgrade",
+      country: "Serbia",
+      postalCode: 11070,
+    },
+  },
+  {
+    id: 2,
+    name: "John",
+    location: {
+      city: "New York",
+      country: "US",
+      postalCode: 10001,
+    },
+  },
+  {
+    id: 3,
+    name: "Stefan",
+    location: {
+      city: "Krusevac",
+      country: "Serbia",
+      postalCode: 37000,
+    },
+  },
+  {
+    id: 4,
+    name: "Ana",
+    location: {
+      city: "Novi Sad",
+      country: "Serbia",
+      postalCode: 21000,
+    },
+  },
+];
+
+const userPhoneNumbers = [
+  { id: 1, phoneNumber: "06038127392" },
+  { id: 2, phoneNumber: "06038156792" },
+  { id: 3, phoneNumber: "06038122392" },
+  { id: 4, phoneNumber: "06038133092" },
+];
+
+//1. zadatak
+const res1 = data.filter((element) => element.location.country == "Serbia");
+// console.log(res1);
+//2.zadatak
+const res2 = data.find((element) => element.location.country == "US");
+// console.log(res2);
+//3.zadatak
+const res3 = data.every((element) => element.location.postalCode >= 10000);
+console.log(res3);
+//4.zadatak
+const res4 = data.forEach((element) => {
+  console.log(
+    element.name +
+      " - " +
+      element.location.city +
+      ", " +
+      element.location.country
+  );
+});
+//5.zadatak
+const res5 = data.map((user) => {
+  return { name: user.name, id: user.id };
+});
+console.log(res5);
+//6.zadatak
+const res6 = data.map((user) => {
+  const userPhoneNumber = userPhoneNumbers.find((phoneNumber) => {
+    return user.id === phoneNumber.id;
+  });
+  return {
+    ...user,
+    phoneNumber: userPhoneNumber
+      ? userPhoneNumber.phoneNumber
+      : "No phone number",
+  };
+});
+console.log(res6);
+
+//7.zadatak
+const inventory = [
+  {
+    name: "Laptop",
+    category: "Electronics",
+    price: 1200,
+    quantity: 5,
+  },
+  {
+    name: "Phone",
+    category: "Electronics",
+    price: 800,
+    quantity: 0,
+  },
+  {
+    name: "Headphones",
+    category: "Accessories",
+    price: 150,
+    quantity: 10,
+  },
+  {
+    name: "Keyboard",
+    category: "Accessories",
+    price: 75,
+    quantity: 3,
+  },
+  {
+    name: "Mouse",
+    category: "Accessories",
+    price: 50,
+    quantity: 20,
+  },
+];
+const inventoryNew = inventory.map((elem) => {
+  return {
+    ...elem,
+    totalPrice: elem.price * elem.quantity,
+  };
+});
+console.log(inventoryNew);
+
+//reduce
+const arr = [2, 9, 0, 199, 23, 23, 123, 1111];
+const reduceSum = arr.reduce((acc, elem) => {
+  return acc + elem;
+}, 0);
+console.log(reduceSum);
+// 1. iteracija ---> acc=0, elem=2, callback=>2+0=2(nova vrednost acc-a za sledecu iteaciju)
+// 2. iteracija ---> acc=2, elem=9, callback=>2+9=11(nova vrednost acc-a za sledecu iteaciju)
+// 3. iteracija ---> acc=11, elem=0, callback=>11+0=11(nova vrednost acc-a za sledecu iteaciju)
+//...
+
+//zadatak sa aninog intervjua
+const input = ["banana", "banana", "cherry", "apple", "apple", "banana"];
+// const output = {
+//   banana: 3,
+//   cherry: 1,
+//   apple: 2,
+// };
+var countFruits = input.reduce(function (acc, currentFruit) {
+  //currentFruit je element niza
+  acc[currentFruit] = (acc[currentFruit] || 0) + 1;
+  return acc;
+}, {});
+console.log(countFruits);

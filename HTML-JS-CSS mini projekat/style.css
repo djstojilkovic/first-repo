@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+body {
+    background-color: aliceblue;
+}
+
+h1 {
+    padding: 20px 50px;
+    font-size: 30px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 24px;
+    padding: 15px 0;
+    margin-top: 30px;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.carusel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.carusel img {
+    height: 300px;
+    border: 3px solid grey;
+}
+
+.img-wrapper {
+    width: 80%;
+    text-align: center;
+}
+
+.carusel button {
+    background-color: transparent;
+    padding: 5px 15px;
+    color: darkgreen; 
+    font-size: 20px;
+    border: none;   
+    cursor: pointer;
+}
+
+.card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.card h3, .card h5 {
+    text-align: center;
+}
