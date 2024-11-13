@@ -1,0 +1,18 @@
+body {
+  background-color: rgb(207, 205, 205);
+}
+#txt {
+  width: 200px;
+}
+button {
+  background-color: rgb(199, 20, 20);
+  color: whitesmoke;
+  border: none;
+  padding: 2px;
+  margin: 12px;
+}
+#showtxt {
+  width: 315px;
+  height: 600px;
+  background-color: white;
+}

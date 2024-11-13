@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.head {
+  color: rgb(226, 221, 221);
+  background-color: rgb(54, 53, 53);
+  padding: 15px;
+}
+body {
+  background-image: url(https://wallpapers.com/images/featured/rick-and-morty-cool-pictures-t3ynu5ly9m7jq6e2.jpg);
+  background-size: cover;
+}
+.characters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  text-align: left;
+}
+.characters > div {
+  /* padding: 10px; */
+  border-radius: 10px;
+  margin: 10px;
+  background-color: white;
+  width: 19%;
+  text-align: center;
+}
+.characters > div > img {
+  width: 100%;
+  border-radius: 10px;
+}
+.characters > div > button {
+  width: 80%;
+  height: 30px;
+  margin-bottom: 20px;
+  color: black;
+  background-color: white;
+  border-color: green;
+}
+.characters > div > p {
+  font-size: large;
+  text-align: left;
+  margin-left: 37px;
+}
